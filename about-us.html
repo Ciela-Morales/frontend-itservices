@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>About Us</title>
+		<link rel="stylesheet" href="design2.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<div class="content-wrapper">
+			<!-- Navigation -->
+			<nav class="sticky w-full top-0 fixed z-50 shadow-sm border bg-[#201e43]">
+				<div
+					class="px-5 sm:mx-auto lg:px-10 py-4 flex items-center justify-between"
+				>
+					<!-- Logo Section (Left) -->
+					<div class="flex items-center space-x-4 shrink-0">
+						<img
+							src="./PICTURES/Logo.png"
+							alt="IT Services Logo"
+							class="rounded-full w-12 h-12"
+						/>
+						<a href="index.html" class="text-2xl font-bold text-white"
+							>IT Services</a
+						>
+					</div>
+
+					<!-- Desktop Navigation (Center) -->
+					<div
+						class="hidden md:flex flex-grow justify-center items-center space-x-6 text-lg"
+					>
+						<a href="index.html" class="text-white hover:text-blue-300">Home</a>
+						<a
+							href="about-us.html"
+							class="text-xl text-blue-300 hover:text-blue-300"
+							>About Us</a
+						>
+						<a href="services.html" class="text-white hover:text-blue-300"
+							>Services</a
+						>
+						<a href="contact-us.html" class="text-white hover:text-blue-300"
+							>Contact Us</a
+						>
+					</div>
+
+					<!-- Action Buttons (Right) -->
+					<div
+						class="hidden md:flex justify-end items-center space-x-4 shrink-0"
+					>
+						<a
+							href="./auth/sign-in.html"
+							class="px-4 py-2 bg-white text-[#201e43] rounded-md hover:bg-blue-600 transition duration-300"
+						>
+							Start Now
+						</a>
+					</div>
+
+					<!-- Mobile Menu Toggle -->
+					<div class="md:hidden flex justify-end">
+						<button id="mobileMenuToggle" class="text-2xl text-white">
+							<i class="fas fa-bars"></i>
+						</button>
+					</div>
+				</div>
+			</nav>
+
+			<!-- Mobile Menu -->
+			<div
+				id="mobileMenu"
+				class="fixed top-0 left-0 w-full h-full bg-[#201e43] z-[60] transform -translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto"
+			>
+				<div class="p-4">
+					<div class="flex justify-between items-center mb-6">
+						<div class="flex items-center space-x-4">
+							<img
+								src="./PICTURES/Logo.png"
+								alt="IT Services Logo"
+								class="rounded-full size-12"
+							/>
+							<h1 class="text-2xl font-bold text-white">IT Services</h1>
+						</div>
+						<button id="closeMobileMenu" class="text-white text-2xl">
+							<i class="fas fa-times"></i>
+						</button>
+					</div>
+
+					<div class="flex flex-col space-y-4">
+						<a
+							href="index.html"
+							class="text-white text-xl py-2 border-b border-gray-700"
+							>Home</a
+						>
+						<a
+							href="about-us.html"
+							class="text-blue-300 text-xl py-2 border-b border-gray-700"
+							>About Us</a
+						>
+						<a
+							href="services.html"
+							class="text-white text-xl py-2 border-b border-gray-700"
+							>Services</a
+						>
+						<a
+							href="contact-us.html"
+							class="text-white text-xl py-2 border-b border-gray-700"
+							>Contact Us</a
+						>
+						<a
+							href="./auth/sign-in.html"
+							class="text-white text-xl py-2 border-b border-gray-700"
+							>Login</a
+						>
+						<a
+							href="./auth/sign-in.html"
+							class="text-white text-xl py-2 bg-blue-500 text-center rounded-md"
+						>
+							Start Now
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<section class="about">
+				<img src="./PICTURES/About Us.png" alt="About Us" class="aboutus-img" />
+				<div class="about-info">
+					<div class="about-img">
+						<img src="./PICTURES/ITServices Logo.png" alt="Geeksforgeeks" />
+					</div>
+					<div>
+						<p>
+							IT Services was founded with the belief that every aspiring IT
+							professional deserves the opportunity to learn, grow, and succeed.
+							We offer personalized tutoring, hands-on workshops, and school
+							projects to make learning practical and engaging. Our team is
+							dedicated to fostering a love for technology and helping students
+							apply their skills confidently. Whether you're a student or an
+							educator, IT Services is here to support your growth and success
+							in the IT field.
+						</p>
+					</div>
+				</div>
+			</section>
+			<!-- YouTube Video Section -->
+			<section class="bg-gray-100 py-16">
+				<div class="container mx-auto px-6">
+					<h2 class="text-4xl font-extrabold text-center text-[#201e43] mb-12">
+						Our Journey
+					</h2>
+					<div class="max-w-4xl mx-auto">
+						<div class="aspect-w-16 aspect-h-9">
+							<iframe
+								src="https://www.youtube.com/embed/Mz1vtRNeNa4"
+								title="IT Services Promotional Video"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen
+								class="w-full h-[600px] rounded-xl shadow-lg"
+							></iframe>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="bg-#{201e43} py-24">
+				<div class="container mx-auto px-6">
+					<h2 class="text-4xl font-extrabold text-center text-white mb-12">
+						Our Core Values
+					</h2>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-[#201e43]">
+						<div
+							class="bg-white p-8 rounded-2xl shadow-lg text-center transition-all hover:shadow-xl hover:-translate-y-2"
+						>
+							<h3 class="font-bold text-2xl mb-4 text-[#201e43]">Vision</h3>
+							<p class="text-gray-600">
+								To empower the next generation of IT professionals with
+								practical skills and innovative thinking.
+							</p>
+						</div>
+
+						<div
+							class="bg-white p-8 rounded-2xl shadow-lg text-center transition-all hover:shadow-xl hover:-translate-y-2"
+						>
+							<h3 class="font-bold text-2xl mb-4 text-gray-800">Mission</h3>
+							<p class="text-gray-600">
+								To bridge the gap between learning and real-world application
+								for IT students through hands-on experiences.
+							</p>
+						</div>
+
+						<div
+							class="bg-white p-8 rounded-2xl shadow-lg text-center transition-all hover:shadow-xl hover:-translate-y-2"
+						>
+							<h3 class="font-bold text-2xl mb-4 text-gray-800">Goals</h3>
+							<p class="text-gray-600">
+								To enhance learning, promote practical skills, foster
+								innovation, build confidence, and expand our reach.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="bg-gray-100 py-24">
+				<h1
+					class="text-4xl font-bold text-[#201e43] text-center font-extrabold"
+				>
+					Meet Our Team
+				</h1>
+
+				<div
+					class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 pt-24 pb-12"
+				>
+					<div
+						class="bg-[#201e43] rounded-3xl shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+					>
+						<div class="h-72 p-6 overflow-hidden rounded-5xl">
+							<img
+								src="./PICTURES/Marielou.jpg"
+								alt="User 1"
+								class="w-full bg-white h-full object-contain rounded-3xl"
+							/>
+						</div>
+						<div class="p-6 text-center text-white">
+							<h2 class="text-3xl font-bold mb-2">Lead IT Consultant</h2>
+
+							<p class="text-gray-300 px-3">
+								<span class="text-lg">Marie Lou B. Nugas</span> Code name
+								<i>"Ate Mars"</i> Lead IT Consultant. Ready to offer helping
+								hand and counsel every aspiring IT student feels supported in
+								their abilities.
+							</p>
+						</div>
+					</div>
+
+					<div
+						class="bg-[#201e43] rounded-3xl shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+					>
+						<div class="h-72 p-6 overflow-hidden rounded-5xl">
+							<img
+								src="./PICTURES/team-2.jpg"
+								alt="User 2"
+								class="w-full bg-white h-full object-contain rounded-3xl"
+							/>
+						</div>
+						<div class="p-6 text-center text-white">
+							<h2 class="text-3xl font-bold mb-2">Team to Go Person</h2>
+
+							<p class="text-gray-300 px-3">
+								<span class="text-lg">Ciela Mae Morales:</span>Code Name<i
+									>"Ate Ciela"</i
+								>. The team's go-to-person for anything related finances. Ate
+								Ciela ensures that everyone feels secure about how funds are
+								being managed.
+							</p>
+						</div>
+					</div>
+					<div
+						class="bg-[#201e43] rounded-3xl shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+					>
+						<div class="h-72 p-6 overflow-hidden rounded-5xl">
+							<img
+								src="./PICTURES/team-1.jpg"
+								alt="User 3"
+								class="w-full bg-white h-full object-contain rounded-3xl"
+							/>
+						</div>
+						<div class="p-6 text-center text-white">
+							<h2 class="text-3xl font-bold mb-2">Business Manager</h2>
+
+							<p class="text-gray-300 px-3">
+								<span class="text-lg">Mae Arnoco: </span> Code name
+								<i>"Ate Mae"</i> Business Manager. Ate Mae ensures that every
+								project runs smoothly leading to satisfied client and successful
+								outcome.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="bg-[#201e43]">
+			<footer class="bg-[#201e43] text-white pt-10">
+				<div class="mx-auto max-w-6xl">
+					<div class="flex justify-between gap-8">
+						<div class="md:col-span-1">
+							<h3 class="text-2xl font-bold mb-4">IT Services</h3>
+							<p class="text-sm text-gray-300 mb-4">
+								Stay in the loop and sign up for IT Services
+							</p>
+							<div class="relative">
+								<input
+									type="email"
+									placeholder="Enter your email"
+									class="w-full px-4 py-2 rounded-full bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-[#508c9b]"
+								/>
+								<button
+									class="absolute right-1 top-1/2 -translate-y-1/2 bg-[#508c9b] text-white px-4 py-2 rounded-full text-sm"
+								>
+									Subscribe
+								</button>
+							</div>
+						</div>
+
+						<div>
+							<h4 class="font-semibold mb-4 pb-2 border-b border-white/20">
+								Company
+							</h4>
+							<ul class="space-y-2">
+								<li>
+									<a
+										href="home.html"
+										class="text-gray-300 hover:text-white transition"
+										>Home</a
+									>
+								</li>
+								<li>
+									<a
+										href="../about-us.html"
+										class="text-gray-300 hover:text-white transition"
+										>About</a
+									>
+								</li>
+								<li>
+									<a
+										href="services.html"
+										class="text-gray-300 hover:text-white transition"
+										>Services</a
+									>
+								</li>
+								<li>
+									<a
+										href="services.html"
+										class="text-gray-300 hover:text-white transition"
+										>Pricing</a
+									>
+								</li>
+								<li>
+									<a
+										href="../about-us.html"
+										class="text-gray-300 hover:text-white transition"
+										>Team</a
+									>
+								</li>
+							</ul>
+						</div>
+
+						<div>
+							<h4 class="font-semibold mb-4 pb-2 border-b border-white/20">
+								Documentation
+							</h4>
+							<ul class="space-y-2">
+								<li>
+									<a
+										href="#"
+										class="text-gray-300 hover:text-white transition"
+										id="helpCentreButton"
+									>
+										Help Centre
+									</a>
+								</li>
+								<li>
+									<a
+										href="#"
+										class="text-gray-300 hover:text-white transition"
+										id="privacyPolicyButton"
+									>
+										Privacy Policy
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div>
+							<h4 class="font-semibold mb-4 pb-2 border-b border-white/20">
+								Social
+							</h4>
+							<ul class="space-y-2">
+								<li>
+									<a
+										href="https://www.facebook.com/profile.php?id=61568755081153"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>Facebook</a
+									>
+								</li>
+								<li>
+									<a
+										href="https://www.instagram.com/itservices_official/"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>Instagram</a
+									>
+								</li>
+								<li>
+									<a
+										href="https://www.youtube.com/@ITServices_official/"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>Youtube</a
+									>
+								</li>
+								<li>
+									<a
+										href="https://www.linkedin.com/in/itservicesofficial/"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>LinkedIn</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="signupbottom-details">
+					<div class="signupbottom_text">
+						<span class="signupcopyright_text"
+							>&#169; <a href="#">IT Services.</a> All rights reserved
+							2024</span
+						>
+
+						<span class="signuppolicy_terms">
+							<a href="#" id="termsButton">Terms & Conditions</a>
+						</span>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Modal -->
+		<div
+			id="documentationModal"
+			class="fixed inset-0 bg-black/70 flex items-center justify-center hidden"
+		>
+			<div
+				class="bg-white text-black p-6 rounded-lg shadow-lg w-3/4 max-w-lg relative"
+			>
+				<button
+					id="closeModal"
+					class="absolute top-4 right-4 bg-black hover:bg-gray-200 text-white px-4 py-2 rounded"
+				>
+					Close
+				</button>
+				<h2 id="modalTitle" class="text-xl font-bold mb-4"></h2>
+				<p id="modalContent" class="text-gray-700 mb-4"></p>
+			</div>
+		</div>
+
+		<!-- Script -->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				// Buttons
+				const helpButton = document.getElementById("helpCentreButton");
+				const privacyPolicyButton = document.getElementById(
+					"privacyPolicyButton"
+				);
+				const termsButton = document.getElementById("termsButton");
+
+				// Modal
+				const modal = document.getElementById("documentationModal");
+				const modalTitle = document.getElementById("modalTitle");
+				const modalContent = document.getElementById("modalContent");
+				const closeModal = document.getElementById("closeModal");
+
+				// Modal Content Data
+				const contentData = {
+					"Help Centre": `
+        The Help Centre is your ultimate resource for everything IT Services. Here’s what we offer:
+        <ul class="list-disc ml-6 mt-2">
+          <li><b>General Support:</b> Assistance with setting up accounts, booking tutoring sessions, or joining workshops.</li>
+          <li><b>Service Guide:</b> Step-by-step instructions to navigate our offerings.</li>
+          <li><b>Resource Library:</b> Downloadable guides, sample codes, and references.</li>
+          <li><b>Technical Assistance:</b> Troubleshooting help for software and project challenges.</li>
+          <li><b>Contact Us:</b> Reach out via social media or email for direct help.</li>
+        </ul>
+       
+      `,
+					"Privacy Policy": `
+        IT Services takes your privacy seriously. Here’s what you should know:
+        <ul class="list-disc ml-6 mt-2">
+          <li><b>What We Collect:</b> Essential information like name, contact details, and academic needs.</li>
+          <li><b>How We Use It:</b> To tailor services, communicate updates, and improve quality.</li>
+          <li><b>Data Protection:</b> Strict measures to safeguard your data; never shared with unauthorized parties.</li>
+          <li><b>Your Control:</b> You can request to access, correct, or delete your personal data anytime.</li>
+        </ul>
+        
+      `,
+					"Terms & Conditions": `
+        By using IT Services, you agree to the following terms:
+        <ul class="list-disc ml-6 mt-2">
+          <li><b>Eligibility:</b> Services are intended for IT students, educators, and knowledge seekers.</li>
+          <li><b>Responsible Use:</b> Materials are for personal use only; redistribution is prohibited.</li>
+          <li><b>Payments:</b> Must be made prior to service. Refunds issued in specific cases.</li>
+          <li><b>Disclaimer:</b> Outcomes depend on individual effort; results cannot be guaranteed.</li>
+          <li><b>Policy Updates:</b> Terms are subject to change based on service updates.</li>
+        </ul>
+      `,
+				};
+
+				// Open Modal
+				const openModal = (title) => {
+					modalTitle.textContent = title;
+					modalContent.innerHTML = contentData[title];
+					modal.classList.remove("hidden");
+				};
+
+				// Event Listeners for Buttons
+				helpButton.addEventListener("click", (event) => {
+					event.preventDefault();
+					openModal("Help Centre");
+				});
+
+				privacyPolicyButton.addEventListener("click", (event) => {
+					event.preventDefault();
+					openModal("Privacy Policy");
+				});
+
+				termsButton.addEventListener("click", (event) => {
+					event.preventDefault();
+					openModal("Terms & Conditions");
+				});
+
+				// Close Modal
+				closeModal.addEventListener("click", () => {
+					modal.classList.add("hidden");
+				});
+
+				// Close modal by clicking outside content
+				modal.addEventListener("click", (event) => {
+					if (event.target === modal) {
+						modal.classList.add("hidden");
+					}
+				});
+			});
+		</script>
+		<!-- JavaScript for Mobile Menu Toggle -->
+		<script>
+			// Mobile Menu Toggle
+			document
+				.getElementById("mobileMenuToggle")
+				.addEventListener("click", function () {
+					const mobileMenu = document.getElementById("mobileMenu");
+					mobileMenu.classList.remove("-translate-x-full");
+				});
+
+			// Close Mobile Menu
+			document
+				.getElementById("closeMobileMenu")
+				.addEventListener("click", function () {
+					const mobileMenu = document.getElementById("mobileMenu");
+					mobileMenu.classList.add("-translate-x-full");
+				});
+
+			// Close Mobile Menu when menu items clicked
+			document.querySelectorAll("#mobileMenu a").forEach((item) => {
+				item.addEventListener("click", function () {
+					const mobileMenu = document.getElementById("mobileMenu");
+					mobileMenu.classList.add("-translate-x-full");
+				});
+			});
+		</script>
+		<script src="script.js"></script>
+	</body>
+</html>

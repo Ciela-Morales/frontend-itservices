@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Order Confirmation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../design2.css" />
+	</head>
+	<body class="bg-gray-50">
+		<div id="navigationBar"></div>
+		<div class="mx-auto px-4 py-8">
+			<div
+				class="bg-white p-4 sm:p-8 rounded-xl shadow-lg max-w-md mx-auto text-center"
+			>
+				<svg
+					class="mx-auto mb-4 text-green-500 w-12 h-12 sm:w-16 sm:h-16"
+					fill="currentColor"
+					viewBox="0 0 20 20"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+
+				<div id="orderConfirmationContent">
+					<h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-4">
+						Order Confirmed!
+					</h1>
+					<p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
+						Thank you for your purchase.
+					</p>
+
+					<div
+						id="orderDetails"
+						class="text-left bg-gray-100 p-3 sm:p-4 rounded-lg"
+					>
+						<h2 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">
+							Order Summary
+						</h2>
+						<div id="orderItemsContainer" class="space-y-2 sm:space-y-3"></div>
+						<p
+							id="totalAmountDisplay"
+							class="text-right font-bold mt-2 sm:mt-4 text-sm sm:text-base"
+						></p>
+					</div>
+				</div>
+
+				<div
+					class="mt-4 sm:mt-6 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4"
+				>
+					<a
+						href="products.html"
+						class="bg-blue-500 text-white px-4 py-2 sm:px-6 sm:py-2 rounded-full hover:bg-blue-600 text-sm sm:text-base"
+					>
+						Continue Shopping
+					</a>
+					<a
+						href="order.html"
+						class="bg-gray-200 text-gray-800 px-4 py-2 sm:px-6 sm:py-2 rounded-full hover:bg-gray-300 text-sm sm:text-base"
+					>
+						View Orders
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="bg-[#201e43]">
+			<footer class="bg-[#201e43] text-white pt-10">
+				<div class="mx-auto max-w-6xl">
+					<div class="flex justify-between gap-8">
+						<div class="md:col-span-1">
+							<h3 class="text-2xl font-bold mb-4">IT Services</h3>
+							<p class="text-sm text-gray-300 mb-4">
+								Stay in the loop and sign up for IT Services
+							</p>
+							<div class="relative">
+								<input
+									type="email"
+									placeholder="Enter your email"
+									class="w-full px-4 py-2 rounded-full bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-[#508c9b]"
+								/>
+								<button
+									class="absolute right-1 top-1/2 -translate-y-1/2 bg-[#508c9b] text-white px-4 py-2 rounded-full text-sm"
+								>
+									Subscribe
+								</button>
+							</div>
+						</div>
+
+						<div>
+							<h4 class="font-semibold mb-4 pb-2 border-b border-white/20">
+								Company
+							</h4>
+							<ul class="space-y-2">
+								<li>
+									<a
+										href="home.html"
+										class="text-gray-300 hover:text-white transition"
+										>Home</a
+									>
+								</li>
+								<li>
+									<a
+										href="../about-us.html"
+										class="text-gray-300 hover:text-white transition"
+										>About</a
+									>
+								</li>
+								<li>
+									<a
+										href="services.html"
+										class="text-gray-300 hover:text-white transition"
+										>Services</a
+									>
+								</li>
+								<li>
+									<a
+										href="services.html"
+										class="text-gray-300 hover:text-white transition"
+										>Pricing</a
+									>
+								</li>
+								<li>
+									<a
+										href="../about-us.html"
+										class="text-gray-300 hover:text-white transition"
+										>Team</a
+									>
+								</li>
+							</ul>
+						</div>
+
+						<div>
+							<h4 class="font-semibold mb-4 pb-2 border-b border-white/20">
+								Documentation
+							</h4>
+							<ul class="space-y-2">
+								<li>
+									<a
+										href="#"
+										class="text-gray-300 hover:text-white transition"
+										id="helpCentreButton"
+									>
+										Help Centre
+									</a>
+								</li>
+								<li>
+									<a
+										href="#"
+										class="text-gray-300 hover:text-white transition"
+										id="privacyPolicyButton"
+									>
+										Privacy Policy
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div>
+							<h4 class="font-semibold mb-4 pb-2 border-b border-white/20">
+								Social
+							</h4>
+							<ul class="space-y-2">
+								<li>
+									<a
+										href="https://www.facebook.com/profile.php?id=61568755081153"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>Facebook</a
+									>
+								</li>
+								<li>
+									<a
+										href="https://www.instagram.com/itservices_official/"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>Instagram</a
+									>
+								</li>
+								<li>
+									<a
+										href="https://www.youtube.com/@ITServices_official/"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>Youtube</a
+									>
+								</li>
+								<li>
+									<a
+										href="https://www.linkedin.com/in/itservicesofficial/"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>LinkedIn</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="signupbottom-details">
+					<div class="signupbottom_text">
+						<span class="signupcopyright_text"
+							>&#169; <a href="#">IT Services.</a> All rights reserved
+							2024</span
+						>
+
+						<span class="signuppolicy_terms">
+							<a href="#" id="termsButton">Terms & Conditions</a>
+						</span>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Modal -->
+		<div
+			id="documentationModal"
+			class="fixed inset-0 bg-black/70 flex items-center justify-center hidden"
+		>
+			<div
+				class="bg-white text-black p-6 rounded-lg shadow-lg w-3/4 max-w-lg relative"
+			>
+				<button
+					id="closeModal"
+					class="absolute top-4 right-4 bg-black hover:bg-gray-200 text-white px-4 py-2 rounded"
+				>
+					Close
+				</button>
+				<h2 id="modalTitle" class="text-xl font-bold mb-4"></h2>
+				<p id="modalContent" class="text-gray-700 mb-4"></p>
+			</div>
+		</div>
+
+		<!-- Script -->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				// Buttons
+				const helpButton = document.getElementById("helpCentreButton");
+				const privacyPolicyButton = document.getElementById(
+					"privacyPolicyButton"
+				);
+				const termsButton = document.getElementById("termsButton");
+
+				// Modal
+				const modal = document.getElementById("documentationModal");
+				const modalTitle = document.getElementById("modalTitle");
+				const modalContent = document.getElementById("modalContent");
+				const closeModal = document.getElementById("closeModal");
+
+				// Modal Content Data
+				const contentData = {
+					"Help Centre": `
+        The Help Centre is your ultimate resource for everything IT Services. Here’s what we offer:
+        <ul class="list-disc ml-6 mt-2">
+          <li><b>General Support:</b> Assistance with setting up accounts, booking tutoring sessions, or joining workshops.</li>
+          <li><b>Service Guide:</b> Step-by-step instructions to navigate our offerings.</li>
+          <li><b>Resource Library:</b> Downloadable guides, sample codes, and references.</li>
+          <li><b>Technical Assistance:</b> Troubleshooting help for software and project challenges.</li>
+          <li><b>Contact Us:</b> Reach out via social media or email for direct help.</li>
+        </ul>
+       
+      `,
+					"Privacy Policy": `
+        IT Services takes your privacy seriously. Here’s what you should know:
+        <ul class="list-disc ml-6 mt-2">
+          <li><b>What We Collect:</b> Essential information like name, contact details, and academic needs.</li>
+          <li><b>How We Use It:</b> To tailor services, communicate updates, and improve quality.</li>
+          <li><b>Data Protection:</b> Strict measures to safeguard your data; never shared with unauthorized parties.</li>
+          <li><b>Your Control:</b> You can request to access, correct, or delete your personal data anytime.</li>
+        </ul>
+        
+      `,
+					"Terms & Conditions": `
+        By using IT Services, you agree to the following terms:
+        <ul class="list-disc ml-6 mt-2">
+          <li><b>Eligibility:</b> Services are intended for IT students, educators, and knowledge seekers.</li>
+          <li><b>Responsible Use:</b> Materials are for personal use only; redistribution is prohibited.</li>
+          <li><b>Payments:</b> Must be made prior to service. Refunds issued in specific cases.</li>
+          <li><b>Disclaimer:</b> Outcomes depend on individual effort; results cannot be guaranteed.</li>
+          <li><b>Policy Updates:</b> Terms are subject to change based on service updates.</li>
+        </ul>
+      `,
+				};
+
+				// Open Modal
+				const openModal = (title) => {
+					modalTitle.textContent = title;
+					modalContent.innerHTML = contentData[title];
+					modal.classList.remove("hidden");
+				};
+
+				// Event Listeners for Buttons
+				helpButton.addEventListener("click", (event) => {
+					event.preventDefault();
+					openModal("Help Centre");
+				});
+
+				privacyPolicyButton.addEventListener("click", (event) => {
+					event.preventDefault();
+					openModal("Privacy Policy");
+				});
+
+				termsButton.addEventListener("click", (event) => {
+					event.preventDefault();
+					openModal("Terms & Conditions");
+				});
+
+				// Close Modal
+				closeModal.addEventListener("click", () => {
+					modal.classList.add("hidden");
+				});
+
+				// Close modal by clicking outside content
+				modal.addEventListener("click", (event) => {
+					if (event.target === modal) {
+						modal.classList.add("hidden");
+					}
+				});
+			});
+		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", async () => {
+				const urlParams = new URLSearchParams(window.location.search);
+				const orderId = urlParams.get("orderId");
+				const userId = localStorage.getItem("userId");
+
+				if (!orderId) {
+					showErrorMessage("No order ID provided");
+					return;
+				}
+
+				if (!userId) {
+					showErrorMessage("Please log in to view order details");
+					return;
+				}
+
+				try {
+					const numericOrderId = orderId.replace("ORD-", "");
+					const url =
+						window.location.hostname === "localhost" ||
+						window.location.hostname === "127.0.0.1"
+							? "http://localhost:3000"
+							: "https://backend-itservice.onrender.com/";
+					const response = await fetch(
+						`${url}/api/orders/${numericOrderId}?userId=${userId}`,
+						{
+							method: "GET",
+							headers: {
+								"Content-Type": "application/json",
+							},
+						}
+					);
+
+					const orderData = await response.json();
+
+					if (!response.ok) {
+						throw new Error(orderData.error || "Failed to fetch order details");
+					}
+
+					const itemsContainer = document.getElementById("orderItemsContainer");
+					itemsContainer.innerHTML = "";
+
+					orderData.items.forEach((item) => {
+						const itemElement = document.createElement("div");
+						const FALLBACK_IMAGE = "../PICTURES/no-image.jpg";
+						const imageUrl = item.image || FALLBACK_IMAGE;
+						itemElement.classList.add(
+							"flex",
+							"justify-between",
+							"items-center",
+							"mb-2"
+						);
+						itemElement.innerHTML = `
+                        <div class="flex items-center space-x-2 sm:space-x-4">
+                            <img 
+                                src="${imageUrl}" 
+                                alt="${item.name}" 
+                                class="w-10 h-10  md:w-14 sm:h-14 object-cover rounded-md"
+								onerror="
+                                console.error('Image failed to load:', this.src); 
+                                this.onerror=null; 
+                                this.src='${FALLBACK_IMAGE}'
+                            "
+                            >
+                            <span class="text-sm sm:text-base">${
+															item.name
+														}</span>
+                        </div>
+                        <span class="text-sm sm:text-base">
+                            ₱${parseFloat(item.price).toFixed(2)} x ${
+							item.quantity
+						}
+                        </span>
+                    `;
+						itemsContainer.appendChild(itemElement);
+					});
+
+					const totalAmountDisplay =
+						document.getElementById("totalAmountDisplay");
+					totalAmountDisplay.textContent = `Total: ₱${parseFloat(
+						orderData.total
+					).toFixed(2)}`;
+
+					const orderDateElement = document.createElement("p");
+					orderDateElement.classList.add(
+						"text-gray-600",
+						"text-xs",
+						"sm:text-sm",
+						"mt-2"
+					);
+					orderDateElement.textContent = `Order Date: ${orderData.date}`;
+					itemsContainer.appendChild(orderDateElement);
+				} catch (error) {
+					console.error("Error fetching order details:", error);
+					showErrorMessage(error.message);
+				}
+			});
+
+			function showErrorMessage(message) {
+				const orderConfirmationContent = document.getElementById(
+					"orderConfirmationContent"
+				);
+				orderConfirmationContent.innerHTML = `
+                <div class="text-red-500 text-center">
+                    <h2 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">
+                        Oops! Something went wrong
+                    </h2>
+                    <p class="text-base sm:text-lg">${message}</p>
+                    <p class="text-xs sm:text-sm mt-2">
+                        Please try again or contact support.
+                    </p>
+                </div>
+            `;
+			}
+		</script>
+		<script>
+			// Dynamically load HTML components and their respective scripts
+			async function loadComponents() {
+				const components = [
+					{ id: "navigationBar", path: "../components/nav.html" },
+				];
+
+				try {
+					for (const component of components) {
+						const response = await fetch(component.path);
+						const html = await response.text();
+						document.getElementById(component.id).innerHTML = html;
+
+						// Execute inline scripts of the loaded component
+						executeInlineScripts(document.getElementById(component.id));
+					}
+				} catch (error) {
+					console.error("Error loading components:", error);
+				}
+			}
+
+			// Helper: Execute inline <script> tags of a loaded component
+			function executeInlineScripts(element) {
+				const scripts = element.querySelectorAll("script");
+				scripts.forEach((script) => {
+					const newScript = document.createElement("script");
+					newScript.textContent = script.textContent; // Re-execute inline JS
+					document.body.appendChild(newScript).remove(); // Clean up after execution
+				});
+			}
+
+			// Load components when the page is ready
+			document.addEventListener("DOMContentLoaded", loadComponents);
+		</script>
+		<script src="../script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>IT Services</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../design2.css" />
+		<style>
+			/* Optional: Add some basic styling for component loading */
+			.component-loading {
+				opacity: 0.5;
+				pointer-events: none;
+			}
+			.component-error {
+				background-color: #ffdddd;
+				border: 1px solid #ff0000;
+				padding: 10px;
+				margin: 10px 0;
+			}
+		</style>
+	</head>
+	<body class="bg-white text-gray-900">
+		<!-- Component Containers -->
+		<nav class="sticky w-full top-0 fixed z-50 shadow-sm border bg-[#201e43]">
+			<div
+				class="px-5 sm:mx-auto lg:px-10 py-4 flex justify-between items-center"
+			>
+				<div class="flex items-center space-x-4">
+					<img
+						src="../PICTURES/Logo.png"
+						alt="Logo"
+						class="rounded-full size-12"
+					/>
+					<a href=" " class="text-2xl font-bold text-white">IT Services</a>
+				</div>
+
+				<!-- Desktop Navigation -->
+				<div class="hidden md:flex items-center space-x-6 text-lg">
+					<a
+						href="../user/home.html"
+						class="text-xl text-blue-300 hover:text-blue-300"
+						>Home</a
+					>
+					<a href="../user/services.html" class="text-white hover:text-blue-300"
+						>Services</a
+					>
+					<a href="../user/products.html" class="text-white hover:text-blue-300"
+						>Products</a
+					>
+
+					<div class="relative">
+						<button id="profileToggle" class="text-white hover:text-blue-300">
+							<i class="fas fa-user text-xl"></i>
+						</button>
+						<div
+							id="profileDropdown"
+							class="hidden absolute right-0 mt-2 w-48 bg-[#201e43] text-white border border-gray-700 rounded-lg shadow-lg"
+						>
+							<div class="py-1">
+								<a
+									href="../user/cart.html"
+									class="block px-4 py-2 hover:bg-blue-900"
+								>
+									<i class="fas fa-shopping-cart mr-2"></i>Cart
+								</a>
+								<a
+									href="../user/order.html"
+									class="block px-4 py-2 hover:bg-blue-900"
+								>
+									<i class="fas fa-list mr-2"></i>Orders
+								</a>
+								<!-- <a href="#" class="block px-4 py-2 hover:bg-blue-900">
+							<i class="fas fa-cog mr-2"></i>Settings
+						</a> -->
+								<a
+									href="#"
+									id="logoutBtn"
+									class="block px-4 py-2 hover:bg-blue-900"
+								>
+									<i class="fas fa-sign-out-alt mr-2"></i>Logout
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Mobile Menu Toggle -->
+				<button id="mobileMenuToggle" class="md:hidden text-2xl text-white">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+		</nav>
+
+		<!-- Mobile Menu -->
+		<div
+			id="mobileMenu"
+			class="fixed top-0 left-0 w-full h-full bg-[#201e43] z-[60] transform -translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto"
+		>
+			<div class="p-4">
+				<div class="flex justify-between items-center mb-6">
+					<div class="flex items-center space-x-4">
+						<img
+							src="../PICTURES/Logo.png"
+							alt="Logo"
+							class="rounded-full size-12"
+						/>
+						<h1 class="text-2xl font-bold text-white">IT Services</h1>
+					</div>
+					<button id="closeMobileMenu" class="text-white text-2xl">
+						<i class="fas fa-times"></i>
+					</button>
+				</div>
+
+				<div class="flex flex-col space-y-4">
+					<a
+						href="../user/home.html"
+						class="text-white text-xl py-2 border-b border-gray-700"
+						>Home</a
+					>
+					<a
+						href="../user/services.html"
+						class="text-white text-xl py-2 border-b border-gray-700"
+						>Services</a
+					>
+					<a
+						href="../user/products.html"
+						class="text-white t ext-xl py-2 border-b border-gray-700"
+						>Products</a
+					>
+
+					<div class="flex flex-col space-y-2">
+						<a
+							href="../user/cart.html"
+							class="text-white text-xl py-2 border-b border-gray-700"
+						>
+							<i class="fas fa-shopping-cart mr-2"></i>Cart
+						</a>
+						<a
+							href="../user/order.html"
+							class="text-white text-xl py-2 border-b border-gray-700"
+						>
+							<i class="fas fa-list mr-2"></i>Orders
+						</a>
+
+						<a href="#" id="mobilLogoutBtn" class="text-white text-xl py-2">
+							<i class="fas fa-sign-out-alt mr-2"></i>Logout
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<section class="bg-[#201e43] text-white min-h-screen flex items-center">
+			<div
+				class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative"
+			>
+				<p
+					class="welcome-message text-white text-3xl font-bold absolute top-0 left-5"
+				>
+					Welcome
+				</p>
+				<div class="md:w-1/2 mb-10 md:mb-0">
+					<h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+						Kung Libog Na, Patabang Na!
+					</h2>
+					<p class="text-base md:text-xl text-gray-300 mb-8 text-justify">
+						This Business is both a "helping hand" & A "Support System"
+						essentially for those Aspiring IT Students. To counsel, guide, and
+						support them with their growing passion and abilities.
+					</p>
+					<div class="flex justify-center md:justify-start space-x-4">
+						<a
+							href="products.html"
+							class="bg-blue-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-blue-700"
+						>
+							Explore Products
+						</a>
+						<a
+							href="services.html"
+							class="border-2 border-blue-600 bg-white text-[#201e43] px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-blue-50"
+						>
+							Our Services
+						</a>
+					</div>
+				</div>
+
+				<div class="md:w-1/2 flex justify-center">
+					<img
+						src="../PICTURES/Class2.png"
+						alt="Class Image1"
+						class="w-full max-w-[500px] object-cover transform hover:scale-105 transition duration-300"
+					/>
+				</div>
+			</div>
+		</section>
+		<!-- <div id="hero-section"></div> -->
+		<div id="home-products"></div>
+		<div id="home-services"></div>
+		<div id="home-values"></div>
+		<div class="bg-[#201e43]">
+			<footer class="bg-[#201e43] text-white pt-10">
+				<div class="mx-auto max-w-6xl">
+					<div class="flex justify-between gap-8">
+						<div class="md:col-span-1">
+							<h3 class="text-2xl font-bold mb-4">IT Services</h3>
+							<p class="text-sm text-gray-300 mb-4">
+								Stay in the loop and sign up for IT Services
+							</p>
+							<div class="relative">
+								<input
+									type="email"
+									placeholder="Enter your email"
+									class="w-full px-4 py-2 rounded-full bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-[#508c9b]"
+								/>
+								<button
+									class="absolute right-1 top-1/2 -translate-y-1/2 bg-[#508c9b] text-white px-4 py-2 rounded-full text-sm"
+								>
+									Subscribe
+								</button>
+							</div>
+						</div>
+
+						<div>
+							<h4 class="font-semibold mb-4 pb-2 border-b border-white/20">
+								Company
+							</h4>
+							<ul class="space-y-2">
+								<li>
+									<a
+										href="home.html"
+										class="text-gray-300 hover:text-white transition"
+										>Home</a
+									>
+								</li>
+								<li>
+									<a
+										href="../about-us.html"
+										class="text-gray-300 hover:text-white transition"
+										>About</a
+									>
+								</li>
+								<li>
+									<a
+										href="services.html"
+										class="text-gray-300 hover:text-white transition"
+										>Services</a
+									>
+								</li>
+								<li>
+									<a
+										href="services.html"
+										class="text-gray-300 hover:text-white transition"
+										>Pricing</a
+									>
+								</li>
+								<li>
+									<a
+										href="../about-us.html"
+										class="text-gray-300 hover:text-white transition"
+										>Team</a
+									>
+								</li>
+							</ul>
+						</div>
+
+						<div>
+							<h4 class="font-semibold mb-4 pb-2 border-b border-white/20">
+								Documentation
+							</h4>
+							<ul class="space-y-2">
+								<li>
+									<a
+										href="#"
+										class="text-gray-300 hover:text-white transition"
+										id="helpCentreButton"
+									>
+										Help Centre
+									</a>
+								</li>
+								<li>
+									<a
+										href="#"
+										class="text-gray-300 hover:text-white transition"
+										id="privacyPolicyButton"
+									>
+										Privacy Policy
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div>
+							<h4 class="font-semibold mb-4 pb-2 border-b border-white/20">
+								Social
+							</h4>
+							<ul class="space-y-2">
+								<li>
+									<a
+										href="https://www.facebook.com/profile.php?id=61568755081153"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>Facebook</a
+									>
+								</li>
+								<li>
+									<a
+										href="https://www.instagram.com/itservices_official/"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>Instagram</a
+									>
+								</li>
+								<li>
+									<a
+										href="https://www.youtube.com/@ITServices_official/"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>Youtube</a
+									>
+								</li>
+								<li>
+									<a
+										href="https://www.linkedin.com/in/itservicesofficial/"
+										class="text-gray-300 hover:text-white transition"
+										target="_blank"
+										>LinkedIn</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="signupbottom-details">
+					<div class="signupbottom_text">
+						<span class="signupcopyright_text"
+							>&#169; <a href="#">IT Services.</a> All rights reserved
+							2024</span
+						>
+
+						<span class="signuppolicy_terms">
+							<a href="#" id="termsButton">Terms & Conditions</a>
+						</span>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Modal -->
+		<div
+			id="documentationModal"
+			class="fixed inset-0 bg-black/70 flex items-center justify-center hidden"
+		>
+			<div
+				class="bg-white text-black p-6 rounded-lg shadow-lg w-3/4 max-w-lg relative"
+			>
+				<button
+					id="closeModal"
+					class="absolute top-4 right-4 bg-black hover:bg-gray-200 text-white px-4 py-2 rounded"
+				>
+					Close
+				</button>
+				<h2 id="modalTitle" class="text-xl font-bold mb-4"></h2>
+				<p id="modalContent" class="text-gray-700 mb-4"></p>
+			</div>
+		</div>
+
+		<!-- Script -->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				// Buttons
+				const helpButton = document.getElementById("helpCentreButton");
+				const privacyPolicyButton = document.getElementById(
+					"privacyPolicyButton"
+				);
+				const termsButton = document.getElementById("termsButton");
+
+				// Modal
+				const modal = document.getElementById("documentationModal");
+				const modalTitle = document.getElementById("modalTitle");
+				const modalContent = document.getElementById("modalContent");
+				const closeModal = document.getElementById("closeModal");
+
+				// Modal Content Data
+				const contentData = {
+					"Help Centre": `
+        The Help Centre is your ultimate resource for everything IT Services. Here’s what we offer:
+        <ul class="list-disc ml-6 mt-2">
+          <li><b>General Support:</b> Assistance with setting up accounts, booking tutoring sessions, or joining workshops.</li>
+          <li><b>Service Guide:</b> Step-by-step instructions to navigate our offerings.</li>
+          <li><b>Resource Library:</b> Downloadable guides, sample codes, and references.</li>
+          <li><b>Technical Assistance:</b> Troubleshooting help for software and project challenges.</li>
+          <li><b>Contact Us:</b> Reach out via social media or email for direct help.</li>
+        </ul>
+       
+      `,
+					"Privacy Policy": `
+        IT Services takes your privacy seriously. Here’s what you should know:
+        <ul class="list-disc ml-6 mt-2">
+          <li><b>What We Collect:</b> Essential information like name, contact details, and academic needs.</li>
+          <li><b>How We Use It:</b> To tailor services, communicate updates, and improve quality.</li>
+          <li><b>Data Protection:</b> Strict measures to safeguard your data; never shared with unauthorized parties.</li>
+          <li><b>Your Control:</b> You can request to access, correct, or delete your personal data anytime.</li>
+        </ul>
+        
+      `,
+					"Terms & Conditions": `
+        By using IT Services, you agree to the following terms:
+        <ul class="list-disc ml-6 mt-2">
+          <li><b>Eligibility:</b> Services are intended for IT students, educators, and knowledge seekers.</li>
+          <li><b>Responsible Use:</b> Materials are for personal use only; redistribution is prohibited.</li>
+          <li><b>Payments:</b> Must be made prior to service. Refunds issued in specific cases.</li>
+          <li><b>Disclaimer:</b> Outcomes depend on individual effort; results cannot be guaranteed.</li>
+          <li><b>Policy Updates:</b> Terms are subject to change based on service updates.</li>
+        </ul>
+      `,
+				};
+
+				// Open Modal
+				const openModal = (title) => {
+					modalTitle.textContent = title;
+					modalContent.innerHTML = contentData[title];
+					modal.classList.remove("hidden");
+				};
+
+				// Event Listeners for Buttons
+				helpButton.addEventListener("click", (event) => {
+					event.preventDefault();
+					openModal("Help Centre");
+				});
+
+				privacyPolicyButton.addEventListener("click", (event) => {
+					event.preventDefault();
+					openModal("Privacy Policy");
+				});
+
+				termsButton.addEventListener("click", (event) => {
+					event.preventDefault();
+					openModal("Terms & Conditions");
+				});
+
+				// Close Modal
+				closeModal.addEventListener("click", () => {
+					modal.classList.add("hidden");
+				});
+
+				// Close modal by clicking outside content
+				modal.addEventListener("click", (event) => {
+					if (event.target === modal) {
+						modal.classList.add("hidden");
+					}
+				});
+			});
+		</script>
+
+		<script>
+			// Comprehensive Component Loading Utility
+			const ComponentLoader = {
+				// Configuration for components
+				components: [
+					{
+						id: "navigationBar",
+						path: "../components/nav.html",
+						optional: false,
+					},
+					{
+						id: "home-products",
+						path: "../components/home-products.html",
+						optional: false,
+					},
+					{
+						id: "home-services",
+						path: "../components/home-services.html",
+						optional: false,
+					},
+
+					{
+						id: "home-values",
+						path: "../components/home-values.html",
+						optional: false,
+					},
+				],
+
+				// Utility to create error message
+				createErrorMessage(componentId, error) {
+					return `
+						<div class="component-error">
+							<h3>Failed to Load Component: ${componentId}</h3>
+							<p>${error.message}</p>
+						</div>
+					`;
+				},
+
+				// Execute scripts within a loaded component
+				executeScripts(container) {
+					const scripts = container.querySelectorAll("script");
+					scripts.forEach((script) => {
+						const newScript = document.createElement("script");
+
+						// Handle inline and external scripts
+						if (script.src) {
+							newScript.src = script.src;
+						} else {
+							newScript.textContent = script.textContent;
+						}
+
+						document.body.appendChild(newScript);
+					});
+				},
+
+				// Main component loading method
+				async loadComponent(component) {
+					const container = document.getElementById(component.id);
+
+					if (!container) {
+						if (!component.optional) {
+							console.error(`Critical container missing: ${component.id}`);
+						}
+						return;
+					}
+
+					try {
+						// Add loading state
+						container.classList.add("component-loading");
+
+						// Fetch component
+						const response = await fetch(component.path);
+
+						if (!response.ok) {
+							throw new Error(`HTTP error! status: ${response.status}`);
+						}
+
+						// Load HTML content
+						const html = await response.text();
+						container.innerHTML = html;
+
+						// Execute any scripts
+						this.executeScripts(container);
+
+						// Remove loading state
+						container.classList.remove("component-loading");
+					} catch (error) {
+						console.error(`Component load error: ${component.id}`, error);
+
+						// Handle non-optional component failure
+						if (!component.optional) {
+							container.innerHTML = this.createErrorMessage(
+								component.id,
+								error
+							);
+						}
+					}
+				},
+
+				// Initialize component loading
+				async init() {
+					try {
+						// Load components sequentially
+						for (const component of this.components) {
+							await this.loadComponent(component);
+						}
+					} catch (error) {
+						console.error("Critical error in component loading:", error);
+					}
+				},
+			};
+
+			// Initialize component loader when DOM is ready
+			document.addEventListener("DOMContentLoaded", () => {
+				ComponentLoader.init();
+			});
+		</script>
+		<script>
+			document
+				.getElementById("profileToggle")
+				.addEventListener("click", function () {
+					const dropdown = document.getElementById("profileDropdown");
+					dropdown.classList.toggle("hidden");
+				});
+
+			// Close dropdown when clicking outside
+			window.addEventListener("click", function (event) {
+				const dropdown = document.getElementById("profileDropdown");
+				if (!event.target.closest("#profileToggle")) {
+					dropdown.classList.add("hidden");
+				}
+			});
+
+			// Mobile Menu Toggle
+			document
+				.getElementById("mobileMenuToggle")
+				.addEventListener("click", function () {
+					const mobileMenu = document.getElementById("mobileMenu");
+					mobileMenu.classList.remove("-translate-x-full");
+				});
+
+			// Close Mobile si
+			document
+				.getElementById("closeMobileMenu")
+				.addEventListener("click", function () {
+					const mobileMenu = document.getElementById("mobileMenu");
+					mobileMenu.classList.add("-translate-x-full");
+				});
+
+			// Close Mobile Menu when menu items clicked
+			document.querySelectorAll("#mobileMenu a").forEach((item) => {
+				item.addEventListener("click", function () {
+					const mobileMenu = document.getElementById("mobileMenu");
+					mobileMenu.classList.add("-translate-x-full");
+				});
+			});
+
+			// Logout Functionality
+			function handleLogout() {
+				alert("You have been logged out!");
+				// Clear user authentication
+				localStorage.removeItem("userId");
+				localStorage.removeItem("userEmail");
+				localStorage.removeItem("userName");
+
+				// Redirect to login page
+				window.location.href = "../auth/sign-in.html";
+			}
+
+			// Desktop Logout
+			document
+				.getElementById("logoutBtn")
+				.addEventListener("click", handleLogout);
+
+			// Mobile Logout
+			document
+				.getElementById("mobilLogoutBtn")
+				.addEventListener("click", handleLogout);
+		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				// Retrieve the username from localStorage
+				const userName = localStorage.getItem("userName") || "Guest";
+
+				const welcomeMessage = document.querySelector(".welcome-message");
+
+				// Update the content of the paragraph to include the username
+				if (welcomeMessage) {
+					welcomeMessage.textContent = `Welcome, ${userName}`;
+				}
+			});
+		</script>
+		<!-- Optional: Global application script -->
+		<script src="../script.js"></script>
+	</body>
+</html>
