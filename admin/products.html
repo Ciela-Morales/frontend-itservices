@@ -21,12 +21,26 @@
 		<!-- Main Content Area -->
 		<div class="flex-1">
 			<!-- Top Navigation -->
-			<nav
-				class="sticky top-0 z-50 bg-white shadow-md p-4 flex justify-between items-center"
-			>
-				<div class="text-xl font-semibold">Dashboard</div>
-				<a href="../user/home.html" >Admin</a>
-			</nav>
+			<nav class="sticky top-0 z-50 bg-white shadow-md p-4 flex justify-between items-center">
+
+	<div class="text-xl font-semibold">Dashboard</div>
+	<div class="relative">
+		<div
+			id="adminBtn"
+			class="cursor-pointer">
+			Admin
+		</div>
+		<div
+			id="logoutMenu"
+			class="absolute right-0 mt-2 w-32 bg-white border border-gray-300 rounded shadow-md hidden">
+			<button
+				id="logoutBtn"
+				class="w-full text-left px-4 py-2 hover:bg-gray-100">
+				Log Out
+			</button>
+		</div>
+	</div>
+</nav>
 
 			<!-- Main Content -->
 
@@ -486,6 +500,39 @@
 			</div>
 		</div>
 
+		<script>
+			// Get elements
+			const adminBtn = document.getElementById('adminBtn');
+			const logoutMenu = document.getElementById('logoutMenu');
+			const logoutBtn = document.getElementById('logoutBtn');
+		
+			// Toggle the visibility of the logout menu
+			adminBtn.addEventListener('click', () => {
+				logoutMenu.classList.toggle('hidden');
+			});
+		
+			// Handle the logout action
+			logoutBtn.addEventListener('click', () => {
+				// Clear user authentication
+				localStorage.removeItem("userId");
+				localStorage.removeItem("userEmail");
+				localStorage.removeItem("userName");
+		
+				// Optional: Notify the user
+				alert('You have been logged out!');
+		
+				// Redirect to the login page
+				window.location.href="../auth/sign-in.html";
+			});
+		
+			// Close the menu if clicked outside
+			document.addEventListener('click', (event) => {
+				if (!adminBtn.contains(event.target) && !logoutMenu.contains(event.target)) {
+					logoutMenu.classList.add('hidden');
+				}
+			});
+		</script>
+
 		<!-- Script -->
 		<script>
 			document.addEventListener("DOMContentLoaded", () => {
@@ -574,5 +621,8 @@
 			});
 		</script>
 		<script src="products.js"></script>
+
+
+
 	</body>
 </html>
