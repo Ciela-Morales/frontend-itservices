@@ -88,9 +88,16 @@ document.addEventListener("DOMContentLoaded", () => {
 			// Optional: Store additional user details if needed
 			localStorage.setItem("userRole", data.role);
 
-			// Successful sign-in
+			// Check if the user is an admin
+		if (data.email === "admin@gmail.com") {
+			// Redirect to the admin products page
+			window.location.href = "../admin/products.html";
+		} else {
+			// Successful sign-in for a regular user
 			alert("Sign-in successful");
 			window.location.href = "../user/home.html";
+		}
+
 		} catch (error) {
 			console.error("Sign-in error:", error);
 
