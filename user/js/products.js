@@ -182,7 +182,7 @@ async function fetchProducts() {
 			window.location.hostname === "localhost" ||
 			window.location.hostname === "127.0.0.1"
 				? "http://localhost:3000/api/products"
-				: "https://backend-itservice.onrender.com/api/products";
+				: "https://backend-itservices-srlu.onrender.com/api/products";
 
 		const response = await fetch(url, {
 			method: "GET",
@@ -260,7 +260,7 @@ async function addToCart(productId, quantity = 1) {
 		window.location.hostname === "localhost" ||
 		window.location.hostname === "127.0.0.1"
 			? "http://localhost:3000/api/cart"
-			: "https://backend-itservice.onrender.com/api/cart";
+			: "https://backend-itservices-srlu.onrender.com/api/cart";
 	try {
 		const response = await fetch(url, {
 			method: "POST",
@@ -440,7 +440,7 @@ Are you sure you want to purchase this item?
 			window.location.hostname === "localhost" ||
 			window.location.hostname === "127.0.0.1"
 				? "http://localhost:3000/api/single-order"
-				: "https://backend-itservice.onrender.com/api/single-order";
+				: "https://backend-itservices-srlu.onrender.com/api/single-order";
 
 		// Send order to backend
 		const response = await fetch(url, {
@@ -501,7 +501,7 @@ async function populateCategories() {
 			window.location.hostname === "localhost" ||
 			window.location.hostname === "127.0.0.1"
 				? "http://localhost:3000/api/products"
-				: "https://backend-itservice.onrender.com/api/products";
+				: "https://backend-itservices-srlu.onrender.com/api/products";
 
 		const response = await fetch(url);
 

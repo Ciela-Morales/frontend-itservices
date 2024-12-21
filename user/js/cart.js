@@ -18,7 +18,7 @@ class CartManager {
 				window.location.hostname === "localhost" ||
 				window.location.hostname === "127.0.0.1"
 					? "http://localhost:3000/api"
-					: "https://backend-itservice.onrender.com/api";
+					: "https://backend-itservices-srlu.onrender.com/api";
 
 			const response = await fetch(`${url}/cart/${this.userId}`, {
 				method: "GET",
@@ -293,7 +293,7 @@ class CartManager {
 			window.location.hostname === "localhost" ||
 			window.location.hostname === "127.0.0.1"
 				? "http://localhost:3000/api"
-				: "https://backend-itservice.onrender.com/api";
+				: "https://backend-itservices-srlu.onrender.com/api";
 
 		if (confirmRemove) {
 			try {
@@ -351,7 +351,7 @@ class CartManager {
 				window.location.hostname === "localhost" ||
 				window.location.hostname === "127.0.0.1"
 					? "http://localhost:3000/api"
-					: "https://backend-itservice.onrender.com/api";
+					: "https://backend-itservices-srlu.onrender.com/api";
 
 			// Fetch current cart items
 			const cartResponse = await fetch(`${url}/cart/${this.userId}`);
@@ -498,7 +498,7 @@ class CartManager {
 				window.location.hostname === "localhost" ||
 				window.location.hostname === "127.0.0.1"
 					? "http://localhost:3000/api"
-					: "https://backend-itservice.onrender.com/api";
+					: "https://backend-itservices-srlu.onrender.com/api";
 			const response = await fetch(`${url}/cart/update-quantity`, {
 				method: "PUT",
 				headers: {

@@ -5,7 +5,7 @@ async function fetchProducts() {
 			window.location.hostname === "localhost" ||
 			window.location.hostname === "127.0.0.1"
 				? "http://localhost:3000/api/products"
-				: "https://backend-itservice.onrender.com/api/products";
+				: "https://backend-itservices-srlu.onrender.com/api/products";
 		const response = await fetch(url);
 
 		if (!response.ok) {
@@ -94,7 +94,7 @@ const url =
 	window.location.hostname === "localhost" ||
 	window.location.hostname === "127.0.0.1"
 		? "http://localhost:3000"
-		: "https://backend-itservice.onrender.com";
+		: "https://backend-itservices-srlu.onrender.com";
 
 // Show Add Product Modal
 function showAddProductModal() {
@@ -294,7 +294,7 @@ function filterProducts() {
 		window.location.hostname === "localhost" ||
 			window.location.hostname === "127.0.0.1"
 			? "http://localhost:3000/api/products"
-			: "https://backend-itservice.onrender.com/api/products"
+			: "https://backend-itservices-srlu.onrender.com/api/products"
 	)
 		.then((response) => response.json())
 		.then((products) => {
@@ -360,7 +360,7 @@ async function populateCategories() {
 			window.location.hostname === "localhost" ||
 			window.location.hostname === "127.0.0.1"
 				? "http://localhost:3000/api/products"
-				: "https://backend-itservice.onrender.com/api/products";
+				: "https://backend-itservices-srlu.onrender.com/api/products";
 
 		const response = await fetch(url);
 
